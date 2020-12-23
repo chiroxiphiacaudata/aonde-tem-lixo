@@ -1,0 +1,164 @@
+<h:html xmlns="http://www.w3.org/2002/xforms" xmlns:h="http://www.w3.org/1999/xhtml" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:jr="http://openrosa.org/javarosa">
+  <h:head>
+    <h:title>Aonde tem lixo em Tinguá</h:title>
+    <model>
+      <instance>
+        <data id="build_Aonde-tem-lixo-em-Tingu-_1571347995">
+          <meta>
+            <instanceID/>
+          </meta>
+          <lugar/>
+          <tipo/>
+          <outro-lixo/>
+          <tem-mais/>
+          <foto/>
+          <observacoes/>
+        </data>
+      </instance>
+      <itext>
+        <translation lang="English">
+          <text id="/data/lugar:label">
+            <value>Pegue a localização</value>
+          </text>
+          <text id="/data/lugar:hint">
+            <value>Inicia geopoint irá marcar o ponto aonde você está encontrando o lixo, esse é o pontinho que vai aparecer no mapa</value>
+          </text>
+          <text id="/data/lugar:requiredMsg">
+            <value></value>
+          </text>
+          <text id="/data/tipo:label">
+            <value>Tipo de lixo / residuo:</value>
+          </text>
+          <text id="/data/tipo:option0">
+            <value>plástico</value>
+          </text>
+          <text id="/data/tipo:option1">
+            <value>vidro</value>
+          </text>
+          <text id="/data/tipo:option2">
+            <value>lata</value>
+          </text>
+          <text id="/data/tipo:option3">
+            <value>papel</value>
+          </text>
+          <text id="/data/tipo:option4">
+            <value>orgânico</value>
+          </text>
+          <text id="/data/tipo:option5">
+            <value>outro</value>
+          </text>
+          <text id="/data/outro-lixo:label">
+            <value>O que?</value>
+          </text>
+          <text id="/data/tem-mais:label">
+            <value>A maioria é o que?</value>
+          </text>
+          <text id="/data/tem-mais:option0">
+            <value>plástico</value>
+          </text>
+          <text id="/data/tem-mais:option1">
+            <value>vidro</value>
+          </text>
+          <text id="/data/tem-mais:option2">
+            <value>lata</value>
+          </text>
+          <text id="/data/tem-mais:option3">
+            <value>papel</value>
+          </text>
+          <text id="/data/tem-mais:option4">
+            <value>orgânico</value>
+          </text>
+          <text id="/data/tem-mais:option5">
+            <value>outro</value>
+          </text>
+          <text id="/data/foto:label">
+            <value>Tire uma foto</value>
+          </text>
+          <text id="/data/observacoes:label">
+            <value>Observações</value>
+          </text>
+          <text id="/data/observacoes:hint">
+            <value>aqui pode escrever suas observações sobre o lixo que você achou</value>
+          </text>
+        </translation>
+      </itext>
+      <bind nodeset="/data/meta/instanceID" type="string" readonly="true()" calculate="concat('uuid:', uuid())"/>
+      <bind nodeset="/data/lugar" type="geopoint" required="true()" jr:requiredMsg="jr:itext('/data/lugar:requiredMsg')"/>
+      <bind nodeset="/data/tipo" type="select"/>
+      <bind nodeset="/data/outro-lixo" type="string" relevant="(selected(/data/tipo, 'outro'))"/>
+      <bind nodeset="/data/tem-mais" type="select"/>
+      <bind nodeset="/data/foto" type="binary"/>
+      <bind nodeset="/data/observacoes" type="string"/>
+    </model>
+  </h:head>
+  <h:body>
+    <input ref="/data/lugar">
+      <label ref="jr:itext('/data/lugar:label')"/>
+      <hint ref="jr:itext('/data/lugar:hint')"/>
+    </input>
+    <select ref="/data/tipo">
+      <label ref="jr:itext('/data/tipo:label')"/>
+      <item>
+        <label ref="jr:itext('/data/tipo:option0')"/>
+        <value>plastico</value>
+      </item>
+      <item>
+        <label ref="jr:itext('/data/tipo:option1')"/>
+        <value>vidro</value>
+      </item>
+      <item>
+        <label ref="jr:itext('/data/tipo:option2')"/>
+        <value>lata</value>
+      </item>
+      <item>
+        <label ref="jr:itext('/data/tipo:option3')"/>
+        <value>papel</value>
+      </item>
+      <item>
+        <label ref="jr:itext('/data/tipo:option4')"/>
+        <value>organico</value>
+      </item>
+      <item>
+        <label ref="jr:itext('/data/tipo:option5')"/>
+        <value>outro</value>
+      </item>
+    </select>
+    <input ref="/data/outro-lixo">
+      <label ref="jr:itext('/data/outro-lixo:label')"/>
+    </input>
+    <select ref="/data/tem-mais">
+      <label ref="jr:itext('/data/tem-mais:label')"/>
+      <item>
+        <label ref="jr:itext('/data/tem-mais:option0')"/>
+        <value>plastico</value>
+      </item>
+      <item>
+        <label ref="jr:itext('/data/tem-mais:option1')"/>
+        <value>vidro</value>
+      </item>
+      <item>
+        <label ref="jr:itext('/data/tem-mais:option2')"/>
+        <value>lata</value>
+      </item>
+      <item>
+        <label ref="jr:itext('/data/tem-mais:option3')"/>
+        <value>papel</value>
+      </item>
+      <item>
+        <label ref="jr:itext('/data/tem-mais:option4')"/>
+        <value>organico</value>
+      </item>
+      <item>
+        <label ref="jr:itext('/data/tem-mais:option5')"/>
+        <value>outro</value>
+      </item>
+    </select>
+    <upload ref="/data/foto" mediatype="image/*">
+      <label ref="jr:itext('/data/foto:label')"/>
+    </upload>
+    <input ref="/data/observacoes">
+      <label ref="jr:itext('/data/observacoes:label')"/>
+      <hint ref="jr:itext('/data/observacoes:hint')"/>
+    </input>
+  </h:body>
+</h:html>
