@@ -1,0 +1,18 @@
+{
+  "key" : {
+    "name" : "Aonde tem lixo em Tinguá",
+    "id" : "build_Aonde-tem-lixo-em-Tingu-_1571347995",
+    "version" : null
+  },
+  "formDir" : "forms\\Aonde tem lixo em Tinguá",
+  "hasBeenPulled" : true,
+  "cursor" : {
+    "type" : "empty",
+    "value" : null
+  },
+  "lastExportedSubmission" : {
+    "instanceId" : "uuid:8e71eda7-186b-4ab2-a426-7d2d41e4eea2",
+    "submissionDate" : "1970-01-01T00:00:00+02:00",
+    "exportDateTime" : "2019-10-21T21:21:19.401+02:00"
+  }
+}
